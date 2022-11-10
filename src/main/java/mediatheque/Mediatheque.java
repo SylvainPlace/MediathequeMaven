@@ -13,9 +13,12 @@ public class Mediatheque {
 		mediatheque.addItem( new Book("J.R.R. Tolkien", "Le seigneur des anneaux"));
 		mediatheque.addItem( new Book("Philip K. Dick", "Le Maître du haut chateau"));
 		mediatheque.addItem( new CD(12, "Sergeant Peppers"));
+		System.out.println("Le catalogue de la médiathèque contient :");
 		mediatheque.printCatalog();
-		//mediatheque.printOnlyBooks();
-		//mediatheque.printOnlyCDs();		
+		System.out.println("Les livres:");
+		mediatheque.printOnlyBooks();
+		System.out.println("Les CD:");
+		mediatheque.printOnlyCDs();		
 	}
 	
 	public void addItem(Item i) {
@@ -28,17 +31,13 @@ public class Mediatheque {
 	}
 	
 	public void printOnlyBooks() {
-		throw new UnsupportedOperationException("Not supported yet."); 
-		/*
-		//avec instanceof
 		for (Item i : items)
-			if (i instanceof Book)
-				System.out.println(i);
-		*/
+			i.accept(new BookPrinter());
 	}
 
 	public void printOnlyCDs() {
-		throw new UnsupportedOperationException("Not supported yet."); 
+		for (Item i : items)
+			i.accept(new CDPrinter());
 	}
 
 }
