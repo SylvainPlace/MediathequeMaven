@@ -31,13 +31,15 @@ public class Mediatheque {
 	}
 	
 	public void printOnlyBooks() {
+		BookPrinter bp = new BookPrinter();
 		for (Item i : items)
-			i.accept(new BookPrinter());
+			i.accept(bp);
 	}
 
 	public void printOnlyCDs() {
+		CDPrinter cp = new CDPrinter();
 		for (Item i : items)
-			i.accept(new CDPrinter());
+			i.accept(cp);
 	}
 
 }
