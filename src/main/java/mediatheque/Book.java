@@ -24,7 +24,7 @@ public class Book extends Item {
 	}
 	
 	@Override
-	public void accept(MediathequeVisitor v){
+	public void accept(ItemVisitor v){
 		v.visit(this);
 	}
 	

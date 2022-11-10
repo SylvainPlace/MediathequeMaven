@@ -1,6 +1,6 @@
 package mediatheque;
 
-public class CDPrinter implements MediathequeVisitor {
+public class CDPrinter implements ItemVisitor {
 
     @Override
     public void visit(Book item) {
